@@ -14,6 +14,7 @@ app.get('/addpartkey/:algorandAddress/:daysToParticipate', function (req, res) {
 
   // https://developer.algorand.org/docs/run-a-node/participate/generate_keys/#generate-the-participation-key-with-goal
   // https://developer.algorand.org/docs/reference/cli/goal/account/addpartkey/
+  res.set('Content-Type', 'text/plain')
   res.send(
     execSync(
       `goal account addpartkey --address=${req.params.algorandAddress} --roundFirstValid=${lastRoundNumber} --roundLastValid=${approximateRoundNumberSpecifiedDaysFromNow} --keyDilution=${sizeOfParticipationKey}`
@@ -27,6 +28,7 @@ app.get('/changeonlinestatus/:algorandAddress/:onlineBoolean', function (
 ) {
   // https://developer.algorand.org/docs/run-a-node/participate/online/#create-an-online-key-registration-transaction
   // https://developer.algorand.org/docs/reference/cli/goal/account/changeonlinestatus/
+  res.set('Content-Type', 'text/plain')
   res.send(
     execSync(
       `goal account changeonlinestatus --address=${req.params.algorandAddress} --firstvalid=0 --online=${req.params.onlineBoolean}`
@@ -37,11 +39,18 @@ app.get('/changeonlinestatus/:algorandAddress/:onlineBoolean', function (
 app.get('/partkeyinfo', async (req, res) => {
   // https://developer.algorand.org/docs/run-a-node/participate/generate_keys/#view-participation-key-info
   // https://developer.algorand.org/docs/reference/cli/goal/account/partkeyinfo/
+  res.set('Content-Type', 'text/plain')
   res.send(execSync('goal account partkeyinfo'))
+})
+
+app.get('/start', async (req, res) => {
+  res.set('Content-Type', 'text/plain')
+  res.send(execSync('goal node start -d `echo $ALGORAND_DATA`'))
 })
 
 app.get('/status', async (req, res) => {
   // https://developer.algorand.org/docs/reference/cli/goal/node/status/
+  res.set('Content-Type', 'text/plain')
   res.send(execSync('goal node status'))
 })
 

@@ -1,0 +1,4 @@
+{
+  "shared_server":true,
+  "systemd_managed": false
+}
