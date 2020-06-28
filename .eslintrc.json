@@ -1,0 +1,23 @@
+{
+  "extends": ["prettier", "plugin:prettier/recommended"],
+  "parserOptions": { "ecmaVersion": 2018 },
+  "env": { "es6": true },
+  "plugins": ["prettier"],
+  "rules": {
+    "arrow-body-style": 0,
+    "comma-dangle": [2, "only-multiline"],
+    "global-require": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "max-len": 0,
+    "no-confusing-arrow": 0,
+    "no-constant-condition": 0,
+    "no-shadow": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [2, { "ignoreRestSiblings": true }],
+    "no-underscore-dangle": 0,
+    "prettier/prettier": ["error", { "singleQuote": true, "semi": false }],
+    "semi": [2, "never"]
+  }
+}

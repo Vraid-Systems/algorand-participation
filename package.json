@@ -1,0 +1,22 @@
+{
+  "name": "algorand-participation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pm2:start": "npx pm2 start index.js",
+    "pm2:stop": "npx pm2 del 0",
+    "start": "node index.js",
+    "test": "echo \"Warning: no tests are configured\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^4.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "2.0.2"
+  }
+}
