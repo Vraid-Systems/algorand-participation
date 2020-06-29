@@ -21,3 +21,4 @@ At time of publishing that works out to 200 transactions for $0.2USD.
 1. Start the containerized Algorand node: <http://localhost:4243/start>
 1. Verify the containerized Algorand node is running: <http://localhost:4243/status>
 1. Go offline with the Algorand wallet address: <http://localhost:4243/changeonlinestatus/:algorandAddress/false>
+1. Stop the containerized Algorand node: <http://localhost:4243/stop>

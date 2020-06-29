@@ -54,6 +54,11 @@ app.get('/status', async (req, res) => {
   res.send(execSync('goal node status'))
 })
 
+app.get('/stop', async (req, res) => {
+  res.set('Content-Type', 'text/plain')
+  res.send(execSync('goal node stop'))
+})
+
 app.listen(3048, () => console.log(`HTTP listening on ${3048}`))
 
 // const shutdown = () => execSync('')
