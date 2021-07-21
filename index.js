@@ -22,19 +22,19 @@ app.get('/addpartkey/:algorandAddress/:daysToParticipate', function (req, res) {
   )
 })
 
-app.get('/changeonlinestatus/:algorandAddress/:onlineBoolean', function (
-  req,
-  res
-) {
-  // https://developer.algorand.org/docs/run-a-node/participate/online/#create-an-online-key-registration-transaction
-  // https://developer.algorand.org/docs/reference/cli/goal/account/changeonlinestatus/
-  res.set('Content-Type', 'text/plain')
-  res.send(
-    execSync(
-      `goal account changeonlinestatus --address=${req.params.algorandAddress} --firstvalid=0 --online=${req.params.onlineBoolean}`
+app.get(
+  '/changeonlinestatus/:algorandAddress/:onlineBoolean',
+  function (req, res) {
+    // https://developer.algorand.org/docs/run-a-node/participate/online/#create-an-online-key-registration-transaction
+    // https://developer.algorand.org/docs/reference/cli/goal/account/changeonlinestatus/
+    res.set('Content-Type', 'text/plain')
+    res.send(
+      execSync(
+        `goal account changeonlinestatus --address=${req.params.algorandAddress} --firstvalid=0 --online=${req.params.onlineBoolean}`
+      )
     )
-  )
-})
+  }
+)
 
 app.get('/partkeyinfo', async (req, res) => {
   // https://developer.algorand.org/docs/run-a-node/participate/generate_keys/#view-participation-key-info
