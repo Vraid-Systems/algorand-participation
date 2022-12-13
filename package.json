@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.21.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "netmask": "^2.0.2",
     "pm2": "^5.1.0",
     "systeminformation": "^5.7.8"
